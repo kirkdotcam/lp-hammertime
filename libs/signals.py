@@ -1,5 +1,13 @@
 import csv
 
+def up(ohlc):
+    """Returns true/false of whether a row is 
+        
+    """
+    if ohlc["close"] > ohlc["open"]:
+        return True
+
+
 
 
 with open("../ohlc.csv") as file:
@@ -17,6 +25,7 @@ with open("../ohlc.csv") as file:
             "close":row[1]
         }
 
-        print(ohlc_row)
+        if up(ohlc_row):
+            print(ohlc_row)
         
 
