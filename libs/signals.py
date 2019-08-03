@@ -1,13 +1,18 @@
 import csv
 
+# defines up function
 def up(ohlc):
     """Returns true/false of whether a row is 
         
     """
+
+    # test whether the stock 
     if ohlc["close"] > ohlc["open"]:
         return True
+    else:
+        return False
 
-
+# defines hammer function
 def hammer(ohlc):
     """Returns true/false of whether row is a "hammer" signal
 
