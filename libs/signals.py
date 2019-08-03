@@ -4,6 +4,8 @@ import csv
 def up(ohlc):
     """Returns true/false of whether a row increases in value over the day
         
+    Args:
+        row(ohlc dictionary)
     """
 
     # test whether the stock rose on the day.
