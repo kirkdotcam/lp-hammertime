@@ -8,7 +8,17 @@ def up(ohlc):
         return True
 
 
+def hammer(ohlc):
+    """Returns true/false of whether row is a "hammer" signal
 
+    Args:
+        row(ohlc dictionary)
+    """
+
+    if (ohlc["close"]==ohlc["high"]) and up(ohlc) and (ohlc["low"]<ohlc["open"]):
+        return True
+    else:
+        return False
 
 with open("../ohlc.csv") as file:
     reader = csv.reader(file)
@@ -25,7 +35,7 @@ with open("../ohlc.csv") as file:
             "close":row[1]
         }
 
-        if up(ohlc_row):
-            print(ohlc_row)
+        if hammer(ohlc_row):
+            print(row[0],ohlc_row)
         
 
